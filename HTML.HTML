@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>🌟 Harmonious Vibes | Music Journey 🎶</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(to right, #222, #333);
+            text-align: center;
+            margin: 0;
+            color: #fff;
+        }
+
+        h1 {
+            color: #61dafb;
+            text-shadow: 2px 2px 2px rgba(0, 0, 0, 0.5);
+            margin-bottom: 20px;
+            font-size: 2em;
+            letter-spacing: 2px;
+        }
+
+        #audio-player {
+            width: 80%;
+            max-width: 600px;
+            margin: 20px auto;
+            background-color: rgba(255, 255, 255, 0.9);
+            border-radius: 10px;
+            padding: 20px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            overflow: hidden;
+        }
+
+        #controls {
+            display: flex;
+            justify-content: center;
+            margin-top: 20px;
+            gap: 20px;
+        }
+
+        button {
+            margin: 0;
+            padding: 12px 24px;
+            font-size: 16px;
+            cursor: pointer;
+            background-color: #61dafb;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            transition: background-color 0.3s;
+            outline: none;
+        }
+
+        button:hover {
+            background-color: #007acc;
+        }
+
+        #volume-control {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-top: 20px;
+            gap: 10px;
+        }
+
+        #volume-label {
+            color: #61dafb;
+            font-weight: bold;
+        }
+
+        #volume-slider {
+            width: 60%;
+            background-color: #61dafb;
+            border: none;
+            height: 8px;
+            border-radius: 5px;
+            outline: none;
+        }
+
+        #lyrics {
+            margin-top: 20px;
+            line-height: 1.8;
+            color: #61dafb;
+            font-size: 1.2em;
+            font-weight: 300;
+        }
+
+        #lyrics b {
+            font-weight: bold;
+            color: #f8c930;
+        }
+
+        #footer {
+            margin-top: 50px;
+            padding: 20px;
+            background: #222;
+            color: #61dafb;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>🎵 Groovy Tunes Web Page 🎶</h1>
+
+    <div id="audio-player">
+        <audio id="myAudio" controls>
+            <source src="Chashni---Bharat(PagalWorld).mp3" type="audio/mp3">
+            Your browser does not support the audio tag.
+        </audio>
+    </div>
+
+    <div id="controls">
+        <button onclick="playAudio()">Play</button>
+        <button onclick="pauseAudio()">Pause</button>
+        <button onclick="stopAudio()">Stop</button>
+    </div>
+
+    <div id="volume-control">
+        <label id="volume-label" for="volume-slider">Volume:</label>
+        <input type="range" id="volume-slider" min="0" max="1" step="0.01" value="1" oninput="setVolume()">
+    </div>
+
+    <div id="lyrics">
+        <p>
+            <b>हां, मिट्ठी-मिट्ठी…</b><br>
+            <b>ज़ुबां है फीकी शाम से,</b><br>
+            <b>हुयी ना तोसे बात भी</b><br>
+            <b>बिना मैं तेरे बेमज़ा हुवा हूँ देखो आज भी,</b><br>
+            <b>करूँ मैं ये गुज़ारिशें,</b><br>
+            <b>(मिट्ठी-मिट्ठी)</b><br>
+            <b>मोहब्बतों का मोल दे,</b><br>
+            <b>(मिट्ठी-मिट्ठी)</b><br>
+            <b>नींदों में मेरी खाब का,</b><br>
+            <b>(मिट्ठी-मिट्ठी)</b><br>
+            <b>ज़रा सा मीठा घोल दे ।</b><br>
+
+            <br>
+
+            <b>तू बन जा, बन जा तू मेरी,</b><br>
+            <b>तू बन जा, बन जा तू मेरी,</b><br>
+            <b>तू बन जा, बन जा,</b><br>
+            <b>बन जा, बन जा, तू मेरी,</b><br>
+            <b>इश्क़े दी चाशनी, ओ मिट्ठी-मिट्ठी चाशनी ।</b><br>
+
+            <br>
+
+            <b>मैं ना मांगूंगा धूप धीमी-धीमी,</b><br>
+            <b>मैं ना माँगूँ चांदनी,</b><br>
+            <b>मेरे जीने में तुझसे हो इश्क़े दी चाशनी,</b><br>
+            <b>ओ मिट्ठी-मिट्ठी चाशनी ।</b><br>
+
+            <br>
+
+            <b>मिट्ठी-मिट्ठी, मिट्ठी-मिट्ठी ।</b><br>
+
+            <br>
+
+            <b>मेरे ख्यालों में जो तू हो</b><br>
+            <b>तो बातें हूँ मैं अच्छी-अच्छी करता,</b><br>
+            <b>हो, देखूं सुबह-सुबह जो तुझे,</b><br>
+            <b>तो सारा दिन अच्छा है गुज़रता,</b><br>
+
+            <b>ये कैसी तेरी आरज़ू</b><br>
+            <b>ये कैसी तेरी खाहिशें</b><br>
+            <b>तुझीसे देखो मैं करूँ</b><br>
+            <b>तेरी ही फरमाइशें ।</b><br>
+
+            <br>
+
+            <b>तू बन जा, बन जा तू मेरी,</b><br>
+            <b>तू बन जा, बन जा,</b><br>
+            <b>बन जा, बन जा, तू मेरी,</b><br>
+            <b>इश्क़े दी चाशनी, ओ मिट्ठी-मिट्ठी चाशनी ।</b><br>
+
+            <br>
+
+            <b>मैं ना मांगूंगा धूप धीमी-धीमी,</b><br>
+            <b>मैं ना माँगूँ चांदनी,</b><br>
+            <b>मेरे जीने में तुझसे हो इश्क़े दी चाशनी,</b><br>
+            <b>ओ मिट्ठी-मिट्ठी चाशनी ।</b><br>
+
+            <br>
+
+            <b>मिट्ठी-मिट्ठी,</b><br>
+            <b>ओ मिट्ठी-मिट्ठी चाशनी ।</b><br>
+        </p>
+    </div>
+
+    <div id="footer">
+        <p>🎧 Enjoy the Music Journey! 🌟</p>
+    </div>
+
+    <script>
+        var audio = document.getElementById("myAudio");
+        var volumeSlider = document.getElementById("volume-slider");
+
+        function playAudio() {
+            audio.play();
+        }
+
+        function pauseAudio() {
+            audio.pause();
+        }
+
+        function stopAudio() {
+            audio.pause();
+            audio.currentTime = 0;
+        }
+
+        function setVolume() {
+            audio.volume = volumeSlider.value;
+        }
+    </script>
+
+</body>
+</html>
